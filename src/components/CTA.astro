@@ -15,8 +15,8 @@ interface Props {
 
 const { title, description, primaryCta, secondaryCta } = Astro.props;
 ---
-<section class="text-center py-32 bg-primary bg-[linear-gradient(135deg,#8b2efc_0%,#6018c6_100%)] text-white max-w-[1440px] mx-auto px-6">
-    <div>
+<section class="w-full bg-primary bg-[linear-gradient(135deg,#8b2efc_0%,#6018c6_100%)] text-white py-32">
+    <div class="max-w-[1440px] mx-auto px-6 text-center">
         <h2 class="text-white text-4xl font-extrabold mb-4 tracking-tight">{title}</h2>
         <p class="text-white/90 text-[1.15rem] mb-10">{description}</p>
         <div class="flex gap-4 justify-center items-center flex-wrap">

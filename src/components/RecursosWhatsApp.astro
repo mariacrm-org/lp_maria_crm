@@ -15,61 +15,63 @@ interface Props {
 
 const { badgeText, badgeIcon, title, description, accordions } = Astro.props;
 ---
-<section id="recursos" class="py-24 border-t border-border-color max-w-[1440px] mx-auto px-6">
-    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        <div class="w-full lg:w-1/2">
-            <span class="text-primary font-bold text-[0.85rem] uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 bg-primary-light px-3.5 py-1.5 rounded-full">
-                <span class="material-symbols-outlined text-[1.1rem]">{badgeIcon}</span> {badgeText}
-            </span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-text-dark mb-6 leading-tight">{title}</h2>
-            <p class="text-lg text-text-body mb-8 leading-[1.7]">{description}</p>
+<section id="recursos" class="w-full py-24 border-t border-border-color bg-white">
+    <div class="max-w-[1440px] mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="w-full lg:w-1/2">
+                <span class="text-primary font-bold text-[0.85rem] uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 bg-primary-light px-3.5 py-1.5 rounded-full">
+                    <span class="material-symbols-outlined text-[1.1rem]">{badgeIcon}</span> {badgeText}
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-text-dark mb-6 leading-tight">{title}</h2>
+                <p class="text-lg text-text-body mb-8 leading-[1.7]">{description}</p>
 
-            <div class="flex flex-col gap-3 w-full">
-                {accordions.map((acc, index) => (
-                    <div class="bg-white border border-border-color rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md hover:border-gray-300">
-                        <details class="w-full group" open={index === 0}>
-                            <summary class="flex items-center justify-between p-5 cursor-pointer text-[1.1rem] font-semibold text-text-dark list-none [&::-webkit-details-marker]:hidden">
-                                <div class="flex items-center gap-4">
-                                    {index === 0 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-                                    {index === 1 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
-                                    {index === 2 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>}
-                                    {acc.title}
+                <div class="flex flex-col gap-3 w-full">
+                    {accordions.map((acc, index) => (
+                        <div class="bg-white border border-border-color rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md hover:border-gray-300">
+                            <details class="w-full group" open={index === 0}>
+                                <summary class="flex items-center justify-between p-5 cursor-pointer text-[1.1rem] font-semibold text-text-dark list-none [&::-webkit-details-marker]:hidden">
+                                    <div class="flex items-center gap-4">
+                                        {index === 0 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
+                                        {index === 1 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
+                                        {index === 2 && <svg class="text-primary w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>}
+                                        {acc.title}
+                                    </div>
+                                    <svg class="text-text-muted transition-transform duration-200 group-open:rotate-180" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </summary>
+                                <div class="pl-[3.25rem] pr-5 pb-5 text-text-body text-[0.95rem] leading-[1.6]">
+                                    {acc.content}
                                 </div>
-                                <svg class="text-text-muted transition-transform duration-200 group-open:rotate-180" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                            </summary>
-                            <div class="pl-[3.25rem] pr-5 pb-5 text-text-body text-[0.95rem] leading-[1.6]">
-                                {acc.content}
-                            </div>
-                        </details>
-                    </div>
-                ))}
-            </div>
-        </div>
-
-        <div class="w-full lg:w-1/2 bg-white border border-border-color rounded-[20px] h-[400px] shadow-md relative overflow-hidden flex items-center justify-center [background-image:radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
-            <div class="w-[85%] bg-white border border-border-color rounded-xl shadow-lg flex flex-col">
-                <div class="h-[30px] border-b border-border-color bg-bg-app flex items-center px-4 gap-1.5">
-                    <div class="w-2 h-2 rounded-full bg-gray-300"></div><div class="w-2 h-2 rounded-full bg-gray-300"></div><div class="w-2 h-2 rounded-full bg-gray-300"></div>
-                    <span class="ml-2 text-[11px] text-text-muted font-mono">Grupos WhatsApp</span>
+                            </details>
+                        </div>
+                    ))}
                 </div>
-                <div class="flex-1 p-4 flex flex-col gap-3">
-                    <div class="flex items-center gap-2.5 bg-[#f0fdf4] border border-[#bbf7d0] rounded-lg p-2.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-[#22c55e] shrink-0"></div>
-                        <div class="bg-bg-app h-3 rounded w-[60%]"></div>
-                        <div class="ml-auto bg-[#22c55e] text-white text-[10px] px-2 py-1 rounded-full whitespace-nowrap font-bold">127 contatos</div>
+            </div>
+
+            <div class="w-full lg:w-1/2 bg-white border border-border-color rounded-[20px] h-[400px] shadow-md relative overflow-hidden flex items-center justify-center [background-image:radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]">
+                <div class="w-[85%] bg-white border border-border-color rounded-xl shadow-lg flex flex-col">
+                    <div class="h-[30px] border-b border-border-color bg-bg-app flex items-center px-4 gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-gray-300"></div><div class="w-2 h-2 rounded-full bg-gray-300"></div><div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        <span style="margin-left: 0.5rem; font-size: 0.7rem; color: #9ca3af; font-family: monospace;">Grupos WhatsApp</span>
                     </div>
-                    <div class="flex items-center gap-2.5 bg-[#f0fdf4] border border-[#bbf7d0] rounded-lg p-2.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-[#22c55e] shrink-0"></div>
-                        <div class="bg-bg-app h-3 rounded w-[50%]"></div>
-                        <div class="ml-auto bg-[#22c55e] text-white text-[10px] px-2 py-1 rounded-full whitespace-nowrap font-bold">84 contatos</div>
-                    </div>
-                    <div class="flex items-center gap-2.5 border border-border-color rounded-lg p-2.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300 shrink-0"></div>
-                        <div class="bg-bg-app h-3 rounded w-[70%]"></div>
-                        <div class="ml-auto bg-bg-app text-text-muted text-[10px] px-2 py-1 rounded-full whitespace-nowrap font-bold">43 contatos</div>
-                    </div>
-                    <div class="mt-2 bg-primary text-white rounded-lg p-2.5 text-center text-[11.5px] font-bold cursor-pointer flex items-center justify-center gap-1.5 hover:bg-primary-hover transition-colors">
-                        <span class="material-symbols-outlined text-[15px]">bolt</span> Importar todos os contatos
+                    <div class="mockup-body" style="gap: 0.75rem;">
+                        <div style="display:flex; align-items:center; gap:0.6rem; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:0.6rem 0.85rem;">
+                            <div style="width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;"></div>
+                            <div class="skeleton-line" style="background:#dcfce7;width:60%;height:10px;"></div>
+                            <div style="margin-left:auto;background:#22c55e;color:white;font-size:0.65rem;padding:0.2rem 0.5rem;border-radius:9999px;white-space:nowrap;font-weight:700;">127 contatos</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:0.6rem; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:0.6rem 0.85rem;">
+                            <div style="width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;"></div>
+                            <div class="skeleton-line" style="background:#dcfce7;width:50%;height:10px;"></div>
+                            <div style="margin-left:auto;background:#22c55e;color:white;font-size:0.65rem;padding:0.2rem 0.5rem;border-radius:9999px;white-space:nowrap;font-weight:700;">84 contatos</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:0.6rem; border:1px solid var(--border-color); border-radius:8px; padding:0.6rem 0.85rem;">
+                            <div style="width:10px;height:10px;border-radius:50%;background:#d1d5db;flex-shrink:0;"></div>
+                            <div class="skeleton-line medium" style="height:10px;"></div>
+                            <div style="margin-left:auto;background:var(--bg-app);color:var(--text-muted);font-size:0.65rem;padding:0.2rem 0.5rem;border-radius:9999px;white-space:nowrap;font-weight:700;">43 contatos</div>
+                        </div>
+                        <div class="mt-2 bg-primary text-white rounded-lg p-2.5 text-center text-[11.5px] font-bold cursor-pointer flex items-center justify-center gap-1.5 hover:bg-primary-hover transition-colors">
+                            <span class="material-symbols-outlined text-[15px]">bolt</span> Importar todos os contatos
+                        </div>
                     </div>
                 </div>
             </div>
