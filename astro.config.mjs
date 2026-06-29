@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gabrielbarrosba.github.io',
-  base: '/mariacrm',
+  base: '/lp_maria_crm',
 
   integrations: [
       starlight({
@@ -15,7 +15,7 @@ export default defineConfig({
           customCss: [
               './src/styles/custom.css',
           ],
-          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/gabrielbarrosba/mariacrm' }],
+          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/mariacrm-org/lp_maria_crm' }],
           sidebar: [
               {
                   label: 'Instalação (Docs)',
