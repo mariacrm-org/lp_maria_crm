@@ -1,0 +1,188 @@
+{
+  "company": {
+    "name": "MariaCRM",
+    "whatsappNumber": "(77) 3421-2083",
+    "whatsappUrl": "https://wa.me/557734212083"
+  },
+  "header": {
+    "links": [
+      { "label": "Como funciona", "url": "#como-funciona" },
+      { "label": "Recursos", "url": "#recursos" },
+      { "label": "Planos", "url": "#planos" }
+    ],
+    "ctaText": "Falar com consultor"
+  },
+  "hero": {
+    "badgeText": "Integração nativa com WhatsApp — sem intermediários",
+    "titleHtml": "Transforme Grupos de WhatsApp<br/><span>em Clientes no seu CRM</span>",
+    "description": "Importe contatos com 1 clique, organize seu funil e feche mais vendas em um único lugar.",
+    "pills": [
+      { "label": "Grupos de WhatsApp", "icon": "groups" },
+      { "label": "Importação de Leads", "icon": "bolt" },
+      { "label": "Múltiplos Funis", "icon": "filter_alt" },
+      { "label": "Usuários Ilimitados", "icon": "group" }
+    ],
+    "primaryCta": { "label": "Ver Planos e Preços", "url": "#planos" },
+    "secondaryCta": { "label": "Falar com consultor", "url": "https://wa.me/557734212083" }
+  },
+  "stats": [
+    { "number": "Ilimitado", "label": "Usuários no plano" },
+    { "number": "100%", "label": "Integração WhatsApp" },
+    { "number": "1-clique", "label": "Importação de contatos" },
+    { "number": "R$100", "label": "A partir de / mês" }
+  ],
+  "howItWorks": {
+    "title": "Da prospecção ao fechamento, tudo integrado",
+    "description": "Conecte seu WhatsApp e comece a capturar leads dos seus grupos de forma automática e organizada.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Conecte seu WhatsApp",
+        "description": "Escaneie o QR Code e vincule sua conta. A integração é direta, sem apps de terceiros."
+      },
+      {
+        "number": 2,
+        "title": "Sincronize seus grupos",
+        "description": "Todos os grupos em que você está aparecem no painel com nome, participantes e link de convite."
+      },
+      {
+        "number": 3,
+        "title": "Importe os contatos",
+        "description": "Com um clique, os participantes viram leads na sua base — com número, nome e origem registrados."
+      },
+      {
+        "number": 4,
+        "title": "Gerencie no funil",
+        "description": "Mova negociações entre etapas, atribua vendedores e feche contratos com total visibilidade."
+      }
+    ]
+  },
+  "features": {
+    "whatsapp": {
+      "badgeText": "WhatsApp Nativo",
+      "badgeIcon": "chat_bubble",
+      "title": "Grupos de WhatsApp viram sua maior fonte de leads",
+      "description": "O MariaCRM se conecta diretamente ao WhatsApp — sem aplicativos intermediários. Você sincroniza grupos, extrai participantes e já inicia as negociações, tudo dentro do CRM.",
+      "accordions": [
+        {
+          "title": "Importação de participantes em 1 clique",
+          "content": "Todos os participantes do grupo são importados automaticamente como contatos no CRM, com número de telefone e origem registrados. Nada de copiar e colar manualmente."
+        },
+        {
+          "title": "Link de convite e gestão de grupos",
+          "content": "Gere e atualize links de convite dos grupos diretamente pelo painel. Visualize todos os grupos sincronizados com total participantes e histórico de leads importados."
+        },
+        {
+          "title": "Rastreio de leads por campanha e origem",
+          "content": "Saiba de qual grupo veio cada lead, qual campanha trouxe mais fechamentos e quanto cada canal contribuiu para sua receita."
+        }
+      ]
+    },
+    "pipeline": {
+      "badgeText": "Pipeline de Vendas",
+      "badgeIcon": "filter_alt",
+      "title": "Funis customizados para cada realidade de negócio",
+      "description": "Crie quantos funis precisar e mapeie a jornada completa do cliente: da prospecção no WhatsApp ao fechamento do contrato, com total controle e visibilidade.",
+      "accordions": [
+        {
+          "title": "Kanban visual com múltiplos funis",
+          "content": "Visualize e mova negociações entre etapas com drag & drop. Cada funil pode ser estruturado conforme o processo comercial do seu setor, sem templates engessados."
+        },
+        {
+          "title": "Transferência entre funis e consultores",
+          "content": "Delegue oportunidades entre vendedores, avance etapas e transfira clientes entre funis de forma orgânica. A visibilidade do gestor é total em tempo real."
+        }
+      ]
+    },
+    "dashboard": {
+      "badgeText": "Inteligência de Dados",
+      "badgeIcon": "insights",
+      "title": "Base de contatos organizada. Dashboards em tempo real.",
+      "description": "Unificação por CPF/CNPJ, campos personalizados e relatórios completos que crescem automaticamente com a sua operação.",
+      "accordions": [
+        {
+          "title": "Anti-duplicata por CPF/CNPJ",
+          "content": "Evite redundâncias. Cada lead é validado por documentação (CPF/CNPJ) e mantido como fonte única de verdade, independente de qual funil ou vendedor esteja atuando."
+        },
+        {
+          "title": "Dashboards e exportação CSV",
+          "content": "Cada campo personalizado criado vira automaticamente um gráfico no Dashboard. Exporte relatórios completos em CSV para análises gerenciais detalhadas."
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Planos para cada estágio do seu negócio",
+    "description": "Sem cobrança por usuário. Escale o time de vendas sem pagar a mais por isso. Preços para contratos semestrais.",
+    "plans": [
+      {
+        "id": "basic",
+        "name": "Basic",
+        "description": "Ideal para pequenas equipes que querem organizar e escalar a prospecção via WhatsApp.",
+        "price": "100",
+        "billing": "Cobrado semestralmente · R$ 600 no total",
+        "popular": false,
+        "features": [
+          "Até <strong>2.000 contatos</strong>",
+          "Até <strong>3.000 negociações</strong>",
+          "Importação de grupos WhatsApp",
+          "Funis de vendas personalizados",
+          "Dashboard e relatórios",
+          "Usuários ilimitados",
+          "Exportação CSV"
+        ],
+        "ctaText": "Contratar Basic",
+        "ctaUrl": "https://wa.me/557734212083?text=Olá!%20Tenho%20interesse%20no%20plano%20Basic%20do%20MariaCRM."
+      },
+      {
+        "id": "business",
+        "name": "Business",
+        "description": "Para equipes em crescimento com alto volume de leads e múltiplos grupos de WhatsApp ativos.",
+        "price": "200",
+        "billing": "Cobrado semestralmente · R$ 1.200 no total",
+        "popular": true,
+        "features": [
+          "Até <strong>10.000 contatos</strong>",
+          "Até <strong>15.000 negociações</strong>",
+          "Importação de grupos WhatsApp",
+          "Funis de vendas personalizados",
+          "Dashboard e relatórios avançados",
+          "Usuários ilimitados",
+          "Campos personalizados",
+          "Campanhas e rastreio de origem",
+          "Exportação CSV"
+        ],
+        "ctaText": "Contratar Business",
+        "ctaUrl": "https://wa.me/557734212083?text=Olá!%20Tenho%20interesse%20no%20plano%20Business%20do%20MariaCRM."
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "description": "Para operações de grande porte com necessidades específicas de volume, integrações e suporte dedicado.",
+        "price": "Sob Consulta",
+        "billing": "Fale com nosso time para montar o plano ideal",
+        "popular": false,
+        "features": [
+          "<strong>Contatos e negociações ilimitados</strong>",
+          "Tudo do plano Business",
+          "SLA e suporte prioritário",
+          "Integrações e personalizações sob medida",
+          "Onboarding dedicado"
+        ],
+        "ctaText": "Falar com um consultor",
+        "ctaUrl": "https://wa.me/557734212083?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20plano%20Enterprise%20do%20MariaCRM."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto para transformar grupos em vendas?",
+    "description": "Fale agora com nossos consultores e comece a usar o MariaCRM.",
+    "primaryCta": { "label": "Ver Planos", "url": "#planos" },
+    "secondaryCta": { "label": " (77) 3421-2083", "icon": "chat", "url": "https://wa.me/557734212083" }
+  },
+  "footer": {
+    "description": "MariaCRM — O CRM com integração nativa ao WhatsApp para PMEs.",
+    "contactLabel": "Dúvidas? Fale com a gente:",
+    "copyright": "MariaCRM. Todos os direitos reservados."
+  }
+}

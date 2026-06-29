@@ -1,0 +1,72 @@
+---
+// src/components/Pricing.astro
+interface Plan {
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  billing: string;
+  popular?: boolean;
+  features: string[];
+  ctaText: string;
+  ctaUrl: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  plans: Plan[];
+}
+
+const { title, description, plans } = Astro.props;
+---
+<section id="planos" class="py-24 bg-bg-app border-t border-border-color max-w-[1440px] mx-auto px-6">
+    <div>
+        <div class="text-center mb-16 max-w-[700px] mx-auto">
+            <h2 class="text-4xl font-extrabold text-text-dark mb-4 tracking-tight">{title}</h2>
+            <p class="text-lg text-text-body">{description}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {plans.map((plan) => (
+                <div class={`bg-white border border-border-color rounded-[20px] p-10 relative transition-all duration-300 ease flex flex-col hover:-translate-y-1.5 hover:shadow-lg ${plan.popular ? 'border-primary shadow-[0_0_0_1px_#8b2efc,0_20px_40px_-10px_rgba(139,46,252,0.2)]' : ''}`} id={`plan-${plan.id}`}>
+                    {plan.popular && (
+                        <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[0.78rem] font-bold tracking-wider uppercase px-[1.1rem] py-[0.35rem] rounded-full whitespace-nowrap inline-flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[1rem] [font-variation-settings:'FILL'_1]">star</span> Mais Popular
+                        </span>
+                    )}
+                    <div class="font-display text-[1.3rem] font-bold text-text-dark mb-2">{plan.name}</div>
+                    <div class="text-[0.9rem] text-text-muted mb-8 leading-normal">{plan.description}</div>
+                    
+                    {plan.id === 'enterprise' ? (
+                        <div class="font-display text-[1.8rem] font-extrabold text-text-dark mb-2">{plan.price}</div>
+                    ) : (
+                        <div class="flex items-end gap-[0.3rem] mb-2">
+                            <span class="text-xl font-bold text-text-dark leading-[1.6]">R$</span>
+                            <span class="font-display text-[3.5rem] font-extrabold text-text-dark leading-none">{plan.price}</span>
+                            <span class="text-[0.9rem] text-text-muted leading-[1.8]">/mês</span>
+                        </div>
+                    )}
+                    
+                    <div class="text-[0.82rem] text-text-muted mb-8">{plan.billing}</div>
+                    <hr class="border-none border-t border-border-color mb-7">
+                    <ul class="list-none flex flex-col gap-3.5 mb-10 flex-1">
+                        {plan.features.map((feature) => (
+                            <li class="flex items-start gap-3 text-[0.95rem] text-text-body font-medium">
+                                <span class="shrink-0 w-5 h-5 bg-primary-light rounded-full flex items-center justify-center mt-[1px]">
+                                    <svg class="text-primary w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                </span>
+                                <span set:html={feature} />
+                            </li>
+                        ))}
+                    </ul>
+                    <a href={plan.ctaUrl} target="_blank" class={`block text-center py-[0.85rem] px-6 rounded-lg font-bold text-[0.95rem] no-underline transition-all duration-200 ${plan.popular ? 'bg-primary text-white shadow-[0_4px_14px_rgba(139,46,252,0.35)] hover:bg-primary-hover hover:-translate-y-[2px] hover:shadow-[0_8px_20px_rgba(139,46,252,0.3)]' : plan.id === 'enterprise' ? 'bg-text-dark text-white hover:bg-gray-700 hover:-translate-y-[2px]' : 'bg-transparent text-primary border-2 border-primary hover:bg-primary-light hover:-translate-y-[2px]'}`} id={`cta-${plan.id}`}>
+                        {plan.ctaText}
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

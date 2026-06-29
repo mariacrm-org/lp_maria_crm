@@ -1,0 +1,28 @@
+---
+// src/components/StatsBar.astro
+interface Stat {
+  number: string;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+
+const { stats } = Astro.props;
+---
+<div class="bg-text-dark py-7">
+    <div class="max-w-[1440px] mx-auto px-6">
+        <div class="flex justify-center items-center gap-16 flex-wrap">
+            {stats.map((stat, index) => (
+                <>
+                    <div class="text-center">
+                        <span class="block font-display text-[2.2rem] font-extrabold text-white leading-tight mb-1">{stat.number}</span>
+                        <span class="block text-[0.85rem] text-gray-400 uppercase tracking-wider font-semibold">{stat.label}</span>
+                    </div>
+                    {index < stats.length - 1 && <div class="hidden md:block w-[1px] h-10 bg-white/15" />}
+                </>
+            ))}
+        </div>
+    </div>
+</div>
