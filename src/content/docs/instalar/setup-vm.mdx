@@ -1,0 +1,58 @@
+---
+title: "Instalação em Máquina Virtual (VPS)"
+description: "Guia completo de instalação do MariaCRM hospedando localmente ou através de um provedor cloud dedicado com Docker Compose."
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Este método é inteiramente direcionado aos usuários ou equipes de TI que preferem manter o controle total da infraestrutura local ou cloud em provedores contratados utilizando um ambiente Docker.
+
+## Pré-requisitos da Infraestrutura
+
+Para garantir um funcionamento fluído da aplicação e do banco de dados na mesma máquina:
+
+- **Sistema Operacional Sugerido:** Ubuntu 22.04 LTS ou Debian 12
+- **Processamento:** Pelo menos 2 vCPUs
+- **Memória RAM:** 4 GB de RAM
+- **Armazenamento:** 20 GB de espaço (SSD preferencial)
+- **Pacotes Oob:** `curl`, `git`, `docker` e `docker-compose` instalados no S.O.
+
+## Guia de Implantação
+
+<Steps>
+1. **Baixe ou clone os scripts de setup**
+   Faça login na sua VPS (SSH), clone o diretório responsável com:
+   ```bash
+   git clone https://github.com/gabrielbarrosba/mariacrm.git temp-mariacrm
+   cd temp-mariacrm/deploy
+   ```
+
+2. **Ajuste as Variáveis (Arquivo `.env`)**
+   Copie a base do ambiente:
+   ```bash
+   cp .env.example .env
+   ```
+   Edite para definir as senhas de banco de dados (`MONGO_INITDB_ROOT_PASSWORD`), secret do JWT (`JWT_SECRET`) e afins.
+
+3. **Orquestração com Docker Compose**
+   Inicie o levantamento manual dos contêineres e deixe que as imagens oficiais do Docker façam o resto.
+   ```bash
+   docker-compose up -d
+   ```
+   *Nota: A tag `-d` roda o processo em "detached mode". Mantenha o terminal livre.*
+
+4. **Validando Logs (Manutenção)**
+   Aguarde os logs confirmarem que as conexões subiram perfeitamente.
+   ```bash
+   docker-compose logs -f app
+   ```
+   A mensagem `Database connected` valida a união com o serviço de banco de dados local.
+</Steps>
+
+## Comandos Úteis Pós-Instalação
+
+Qualquer dificuldade no servidor, utilize estes comandos base de reinício:
+
+- **Parar Serviços:** `docker-compose down`
+- **Reiniciar Forçado:** `docker-compose restart`
+- **Verificar Status das Imagens:** `docker ps`

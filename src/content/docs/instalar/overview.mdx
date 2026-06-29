@@ -1,0 +1,16 @@
+---
+title: "Visão Geral de Instalação"
+description: "Sistemas e métodos recomendados para implantar o MariaCRM"
+---
+
+O MariaCRM é uma solução incrivelmente leve. Desenvolvido para ser altamente escalável e moderno, recomendamos infraestruturas conteinerizadas para obter os melhores resultados de estabilidade e custos de hospedagem.
+
+## Escolha seu método de Deploy
+
+Disponibilizamos duas vias principais para a sua empresa usar o MariaCRM em produção.
+
+1. **Google Cloud Run + MongoDB Atlas (Para quem busca Nuvem e Custos Sob Demanda):** O principal e mais recomendado. O método é escalonado em Serverless. Sua empresa não precisa lidar com infraestruturas subjacentes, e o consumo atrelado apenas as requisições ativas da plataforma.
+   - [Configurar no Cloud Run](/instalar/setup-cloudrun/)
+
+2. **Máquina Virtual - VPS (Para quem prefere infraestrutura dedicada):** Uma solução para o controle absolutista sobre o ambiente ou infraestruturas legadas em empresas privadas. Realizado com Docker Compose para gerir os containers do MongoDB e da aplicação.
+   - [Configurar via Máquina Virtual](/instalar/setup-vm/)

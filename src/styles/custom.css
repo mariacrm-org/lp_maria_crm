@@ -1,0 +1,96 @@
+/* src/styles/custom.css */
+
+/*
+  Paleta de Cores: MariaCRM Premium
+  Utilizamos um design com contrastes escuros elegantes e luzes suaves de destaque,
+  perfeito para passar confiabilidade e performance (cloud, serverless).
+*/
+:root {
+  /* Tonalidades de Destaque (Accent - Azul Metálico Premium e Roxo) */
+  --sl-color-accent-low: #1d1b4b;
+  --sl-color-accent: #6d28d9;
+  --sl-color-accent-high: #c4b5fd;
+  
+  /* Cores de Fundo - Dark Mode Principal */
+  --sl-color-bg: #09090b;
+  --sl-color-bg-nav: rgba(9, 9, 11, 0.8);
+  --sl-color-bg-sidebar: #09090b;
+  --sl-color-bg-inline-code: #18181b;
+  
+  /* Textos - Contraste suave */
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #fafafa;
+  --sl-color-gray-2: #e4e4e7;
+  --sl-color-gray-3: #a1a1aa;
+  --sl-color-gray-4: #52525b;
+  --sl-color-gray-5: #27272a;
+  --sl-color-gray-6: #18181b;
+  
+  /* Tipografia refinada (quando disponível pelo SO) */
+  --sl-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[data-theme='light'] {
+  /* Tonalidades de Destaque para tema claro */
+  --sl-color-accent-low: #f3e8ff;
+  --sl-color-accent: #7c3aed;
+  --sl-color-accent-high: #4c1d95;
+  
+  /* Cores de Fundo - Tema Claro (Clean & Negative Space) */
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: rgba(255, 255, 255, 0.8);
+  --sl-color-bg-sidebar: #fcfcfc;
+  --sl-color-bg-inline-code: #f4f4f5;
+
+  /* Textos em claro */
+  --sl-color-white: #09090b;
+  --sl-color-gray-1: #18181b;
+  --sl-color-gray-2: #27272a;
+  --sl-color-gray-3: #52525b;
+  --sl-color-gray-4: #a1a1aa;
+  --sl-color-gray-5: #e4e4e7;
+  --sl-color-gray-6: #f4f4f5;
+}
+
+/* Ajustes da Splash Page (Landing Page) */
+.hero > img {
+  filter: drop-shadow(0 0 2rem rgba(124, 58, 237, 0.3));
+}
+
+.hero > h1 {
+  background: linear-gradient(135deg, var(--sl-color-accent-high), var(--sl-color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Espaçamento generoso (Negative Space) para Landing Page */
+.page.sl-flex.sl-dir-col {
+  padding-bottom: 4rem;
+}
+
+/* Estilo para Cards premium na LP */
+.card-grid .card {
+  border: 1px solid var(--sl-color-gray-5);
+  background-color: var(--sl-color-bg-inline-code);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border-radius: 12px;
+}
+
+.card-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px rgba(124, 58, 237, 0.2);
+  border-color: var(--sl-color-accent);
+}
+
+.sl-markdown-content a:not(.action) {
+  text-decoration: none;
+  border-bottom: 1px solid var(--sl-color-accent);
+  transition: border-bottom-color 0.2s, color 0.2s;
+}
+
+.sl-markdown-content a:not(.action):hover {
+  color: var(--sl-color-accent-high);
+  border-bottom-color: var(--sl-color-accent-high);
+}

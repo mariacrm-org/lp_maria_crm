@@ -1,0 +1,48 @@
+---
+title: "Google Cloud Run + MongoDB Atlas"
+description: "O método recomendado, ágil e escalável para Deploy do MariaCRM (Zero Manutenção / Serverless)."
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Deploying applications via **Google Cloud Run** acoplada ao **MongoDB Atlas** representa o estado-da-arte para soluções modernas, visto que sua infraestrutura irá custar valores irrisórios em picos ou em inatividade, entregando alta performance.
+
+## Método
+
+Abaixo o passo-a-passo minucioso exigido para um provimento bem sucedido.
+
+<Steps>
+1. **Criar sua conta e Banco no MongoDB Atlas**
+   - Acesse [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) e crie uma conta (O Free Tier `M0` atende as demandas).
+   - Configure a `Network Access`: Vá em "Network Access" e adicione o IP `0.0.0.0/0` (permitir qualquer IP, já que as instâncias do Cloud Run e seus end-points mudam dinamicamente).
+   - Vá em "Database" e acesse o menu de `Connect > Drivers` para copiar sua String de Conexão.
+   - **Exemplo de URL (URI)**: `mongodb+srv://admin:SENHA_AQUI@cluster0.abcde.mongodb.net/mariacrm?retryWrites=true&w=majority`
+
+2. **Anotar Variáveis Core**
+   Você vai precisar injetar algumas `Environment Variables` pelo painel da hospedagem. Entre elas:
+   - `MONGO_URI`: A URL capturada no passo 1.
+   - `JWT_SECRET`: Gere uma string longa com letras e números para encriptar a sessão dos seus futuros usuários.
+
+3. **Deploy no Google Cloud Run**
+   - Faça login no Console do GCP, navegue para o menu do `Cloud Run` e clique em `Criar Serviço`.
+   - Na opção "Implante uma revisão a partir de uma imagem de contêiner ou pule esta etapa provisoriamente", use nossa **Imagem Pública Oficial**:
+     ```
+     gabrielbarrosba/mariacrm:latest
+     ```
+     *(Verifique o repositório correto caso a tag tenha sido atualizada em nosso repositório oficial)*
+
+4. **Configurações de Execução (Opcional, porém sugerido)**
+   - **Controle de Ingressos**: "Permitir tráfego não autenticado" (Para que seus usuários acessem o CRM via Web livremente).
+   - **Hardware Alocado**: A plataforma opera tão redonda que `1 vCPU` e `512 MB` de memória por contêiner atenderão as requisições perfeitamente.
+   - **Variáveis de Ambiente**: Role a aba para "Contêineres, volumes, rede e segurança" -> expanda a área em `Variáveis de Ambiente`. Insira a chave `MONGO_URI` e os valores correspondentes que anotamos.
+
+5. **Lançamento e Validação**
+   - Conclua e acione o botão `Criar`.
+   - Aguarde o provisionamento (Levará cerca de dezenas de segundos).
+   - Após constar um "Check Verde" (OK), um HTTPS final será renderizado como a URL da sua aplicação.
+   - Acesse-a. Verifique também no menu de `Logs` integrados ao Google Cloud Run, caso seja exposta alguma inconformidade (como variáveis faltantes apontando erro nas rotas do banco).
+</Steps>
+
+--- 
+
+Pronto! Seu ambiente **MariaCRM** já está seguro para receber acessos em rede mundial com SLA praticamente impecável.
