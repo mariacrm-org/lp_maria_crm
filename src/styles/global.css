@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@import "./custom.css";
+
+@theme {
+  --color-primary: #8b2efc;
+  --color-primary-hover: #731dd6;
+  --color-primary-light: #f3e8ff;
+  
+  --color-bg-app: #fcfcfd;
+  --color-text-dark: #111827;
+  --color-text-body: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-border-color: #e5e7eb;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
